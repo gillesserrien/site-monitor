@@ -39,7 +39,7 @@ final class SiteMonitor {
         } else if let savedSites = store.load() {
             self.sites = savedSites
         } else {
-            self.sites = Site.defaults
+            self.sites = []
         }
     }
 
@@ -305,7 +305,7 @@ final class SiteMonitor {
 #if DEBUG
 extension SiteMonitor {
     static func preview() -> SiteMonitor {
-        let monitor = SiteMonitor(sites: Site.defaults)
+        let monitor = SiteMonitor(sites: Site.examples)
         let now = Date.now
         let samples: [(status: SiteStatus, responseTime: TimeInterval, message: String)] = [
             (.up, 0.21, "OK"),

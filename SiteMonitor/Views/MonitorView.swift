@@ -341,6 +341,8 @@ struct MonitorView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     MonitorView(monitor: .preview())
 }
+#endif

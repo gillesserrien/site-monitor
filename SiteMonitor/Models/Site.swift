@@ -33,12 +33,6 @@ nonisolated extension Site {
 }
 
 extension Site {
-    static let defaults: [Site] = [
-        Site(name: "CompactCode", url: URL(string: "https://compactcode.eu")!),
-        Site(name: "EHALE", url: URL(string: "https://ehale.eu")!),
-        Site(name: "ACGT17", url: URL(string: "https://acgt17.be")!, checksInertiaSSR: true),
-    ]
-
     static func url(from input: String) -> URL? {
         var text = input.trimmingCharacters(in: .whitespacesAndNewlines)
         if text.isEmpty {
@@ -54,3 +48,13 @@ extension Site {
         return isWebAddress ? url : nil
     }
 }
+
+#if DEBUG
+extension Site {
+    static let examples: [Site] = [
+        Site(name: "CompactCode", url: URL(string: "https://compactcode.eu")!),
+        Site(name: "EHALE", url: URL(string: "https://ehale.eu")!),
+        Site(name: "ACGT17", url: URL(string: "https://acgt17.be")!, checksInertiaSSR: true),
+    ]
+}
+#endif

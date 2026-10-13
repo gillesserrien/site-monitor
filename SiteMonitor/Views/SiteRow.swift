@@ -132,6 +132,7 @@ struct ResponseTimeChart: View {
     }
 }
 
+#if DEBUG
 #Preview {
     let monitor = SiteMonitor.preview()
     VStack(spacing: 0) {
@@ -142,3 +143,4 @@ struct ResponseTimeChart: View {
     .padding(6)
     .frame(width: 360)
 }
+#endif
